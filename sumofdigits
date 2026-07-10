@@ -1,0 +1,14 @@
+#include<iostream>
+using namespace std;
+int main(){
+    int no = 435;
+    int sum = 0;
+    while(no>0){
+        int ldig=no%10;
+        sum=sum+ldig;
+        no=no/10;
+
+
+    }
+    cout<<"sum of the digits are:"<<sum;
+}
