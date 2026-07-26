@@ -1,0 +1,12 @@
+#include<iostream>
+using namespace std;
+void update(int &n ){
+    n++;
+}
+int main(){
+    int j=5;
+    cout<<j<<endl;
+    update(j);
+    cout<<j;
+
+}
