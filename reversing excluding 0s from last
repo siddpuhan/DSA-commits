@@ -1,0 +1,13 @@
+#include<iostream>
+using namespace std;
+int main(){
+    int n =1900;
+    int revnum=0;
+    while(n>0){
+        int ldigit = n%10;
+        revnum=(revnum * 10)+ldigit;
+        n=n/10;
+
+    }
+    cout<<revnum;
+}
