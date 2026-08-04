@@ -1,0 +1,16 @@
+#include<iostream>
+using namespace std;
+// implementng recurssion and backtrackking
+void printno(int i, int n){
+    if(i>n){
+        return;
+    }
+    //cout<<i<<endl;
+    printno(i+1,n);
+    cout<<i<<endl;
+
+}
+int main(){
+    int n = 6;
+    printno(1,n);
+}
