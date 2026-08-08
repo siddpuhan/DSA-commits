@@ -1,0 +1,45 @@
+class Solution {
+public:
+    long long maximumSubarraySum(vector<int>& nums, int k) {
+
+        int n = nums.size();
+
+        int left = 0;
+        long long sum = 0;
+        long long maxSum = 0;
+
+        unordered_map<int, int> freq;
+
+        for(int right = 0; right < n; right++) {
+
+            // Add new element to window
+            sum += nums[right];
+            freq[nums[right]]++;
+
+            // If window becomes bigger than k,
+            // remove element from left
+            if(right - left + 1 > k) {
+
+                sum -= nums[left];
+                freq[nums[left]]--;
+
+                // Remove key if element no longer exists
+                if(freq[nums[left]] == 0) {
+                    freq.erase(nums[left]);
+                }
+
+                left++;
+            }
+
+            // Window size is exactly k
+            // and all elements are distinct
+            if(right - left + 1 == k &&
+               freq.size() == k) {
+
+                maxSum = max(maxSum, sum);
+            }
+        }
+
+        return maxSum;
+    }
+};
